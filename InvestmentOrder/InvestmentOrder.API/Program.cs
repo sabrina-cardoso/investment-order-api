@@ -2,6 +2,7 @@ using InvestmentOrder.Application.UseCases;
 using InvestmentOrder.Domain.Ports.In;
 using InvestmentOrder.Domain.Ports.Out;
 using InvestmentOrder.Infrastructure.Adapters.Kafka;
+using InvestmentOrder.Infrastructure.Health;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IInvestmentOrderProducer, KafkaInvestmentOrderProducer>();
 builder.Services.AddScoped<ICreateInvestmentOrderUseCase, CreateInvestmentOrder>();
+
+builder.Services.AddHealthChecks()
+    .AddCheck("kafka", new KafkaHealthCheck("localhost:9092"));
 
 var app = builder.Build();
 
@@ -29,5 +33,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapHealthChecks("/health");
 
 app.Run();
