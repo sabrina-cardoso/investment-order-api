@@ -1,14 +1,10 @@
-﻿using InvestmentOrder.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InvestmentOrder.Domain.Dtos;
+using InvestmentOrder.Domain.Entities;
 
 namespace InvestmentOrder.Domain.Ports.In;
 
 public interface ICreateInvestmentOrderUseCase
 {
-    Task ExecuteAsync(Order order);
+    Task ExecuteAsync(OrderDto orderDto);
 }
 

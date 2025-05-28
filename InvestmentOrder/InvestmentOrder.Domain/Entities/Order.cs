@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InvestmentOrder.Domain.Dtos;
 
 namespace InvestmentOrder.Domain.Entities;
 
@@ -15,10 +11,16 @@ public class Order
 
     public Order(int id, string asset, int quantity, string type)
     {
-        Id = id;
         Asset = asset;
         Quantity = quantity;
         Type = type;
+    }
+
+    public Order(OrderDto orderDto)
+    {
+        Asset = orderDto.Asset;
+        Quantity = orderDto.Quantity;
+        Type = orderDto.Type;
     }
 }
 
