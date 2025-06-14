@@ -14,7 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IInvestmentOrderProducer, KafkaInvestmentOrderProducer>();
-builder.Services.AddScoped<ICreateInvestmentOrderUseCase, OrderService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 builder.Services.AddHealthChecks()
     .AddCheck("kafka", new KafkaHealthCheck("localhost:9092"));

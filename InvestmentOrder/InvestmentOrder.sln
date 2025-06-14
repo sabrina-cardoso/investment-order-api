@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sqlserver", "sqlserver", "{
 		init.sql = init.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvestmentOrder.Tests", "IvestmentOrder.Tests\IvestmentOrder.Tests.csproj", "{5B88DEF2-104D-41AD-85F5-C8640E672488}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{203EA191-D565-40AF-A9E4-BDD8AEB775D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{203EA191-D565-40AF-A9E4-BDD8AEB775D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{203EA191-D565-40AF-A9E4-BDD8AEB775D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B88DEF2-104D-41AD-85F5-C8640E672488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B88DEF2-104D-41AD-85F5-C8640E672488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B88DEF2-104D-41AD-85F5-C8640E672488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B88DEF2-104D-41AD-85F5-C8640E672488}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

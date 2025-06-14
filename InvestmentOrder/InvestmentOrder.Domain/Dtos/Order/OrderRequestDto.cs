@@ -22,19 +22,6 @@ public class OrderRequestDto
 
     public static OrderRequestDto Create(int investorId, string asset, int amount, decimal price)
     {
-        if (investorId <= 0)
-            throw new ArgumentException("Investor ID must be greater than zero", nameof(investorId));
-
-        if (string.IsNullOrWhiteSpace(asset))
-            throw new ArgumentException("Asset is required", nameof(asset));
-
-        if (amount <= 0)
-            throw new ArgumentException("Amount must be greater than zero", nameof(amount));
-
-        if (price <= 0)
-            throw new ArgumentException("Price must be greater than zero", nameof(price));
-
-
         return new OrderRequestDto(investorId, asset, amount, price);
     }
 }
