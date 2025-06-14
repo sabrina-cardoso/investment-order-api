@@ -1,10 +1,10 @@
-﻿using InvestmentOrder.Domain.Dtos;
+﻿using InvestmentOrder.Domain.Dtos.Order;
 using InvestmentOrder.Domain.Entities;
 
 namespace InvestmentOrder.Domain.Ports.In;
 
-public interface ICreateInvestmentOrderUseCase
+public interface IOrderService
 {
-    Task ExecuteAsync(OrderDto orderDto);
+    Task CreateOrder(OrderRequestDto orderDto);
 }
 

@@ -1,4 +1,4 @@
-using InvestmentOrder.Application.UseCases;
+using InvestmentOrder.Application.Services;
 using InvestmentOrder.Domain.Ports.In;
 using InvestmentOrder.Domain.Ports.Out;
 using InvestmentOrder.Infrastructure.Adapters.Kafka;
@@ -14,7 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IInvestmentOrderProducer, KafkaInvestmentOrderProducer>();
-builder.Services.AddScoped<ICreateInvestmentOrderUseCase, CreateInvestmentOrder>();
+builder.Services.AddScoped<ICreateInvestmentOrderUseCase, OrderService>();
 
 builder.Services.AddHealthChecks()
     .AddCheck("kafka", new KafkaHealthCheck("localhost:9092"));
