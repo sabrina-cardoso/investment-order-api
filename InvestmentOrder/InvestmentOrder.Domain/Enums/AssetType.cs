@@ -1,11 +1,11 @@
 ﻿public enum AssetType
 {
-    Acao = 1,
-    Opcao = 2,
-    FundoImobiliario = 3,
+    Stock = 1,
+    Option = 2,
+    RealEstateFund = 3,
     ETF = 4,
     BDR = 5,
-    Futuro = 6,
-    TesouroDireto = 7
+    Future = 6,
+    GovernmentBond = 7
 }
 

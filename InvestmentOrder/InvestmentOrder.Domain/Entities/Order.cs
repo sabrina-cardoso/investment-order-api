@@ -5,16 +5,16 @@ namespace InvestmentOrder.Domain.Entities;
 public class Order
 {
     public int Id { get; set; }
-    public Investor Investor { get; set; }
+    public int InvestorId { get; set; }
     public string Asset { get; set; }
     public int Amount { get; set; }
     public decimal Price { get; set; }
     public OrderStatus Status { get; private set; }
     public DateTime CreatedAt { get; private set; }
 
-    private Order(string asset, int amount, Investor investor, decimal price)
+    private Order(string asset, int amount, int investorId, decimal price)
     {
-        this.Investor = investor;
+        InvestorId = investorId;
         Asset = asset;
         Amount = amount;
         Price = price;
@@ -40,7 +40,7 @@ public class Order
             throw new ArgumentException("Price must be greater than zero", nameof(order.Price));
 
 
-        return new Order(order.Asset, order.Amount, new Investor { Id = order.InvestorId }, order.Price);
+        return new Order(order.Asset, order.Amount, order.InvestorId, order.Price);
     }
 }
 

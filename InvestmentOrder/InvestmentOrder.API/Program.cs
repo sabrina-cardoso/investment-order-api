@@ -3,8 +3,11 @@ using InvestmentOrder.Domain.Ports.In;
 using InvestmentOrder.Domain.Ports.Out;
 using InvestmentOrder.Infrastructure.Adapters.Kafka;
 using InvestmentOrder.Infrastructure.Health;
+using InvestmentOrder.Infrastructure.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddJsonFile("appsettings.json");
 
 // Add services to the container.
 
@@ -14,7 +17,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IInvestmentOrderProducer, KafkaInvestmentOrderProducer>();
+
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IInvestorService, InvestorService>();
+
+builder.Services.AddScoped<IInvestorRepository, InvestorRepository>();
 
 builder.Services.AddHealthChecks()
     .AddCheck("kafka", new KafkaHealthCheck("localhost:9092"));

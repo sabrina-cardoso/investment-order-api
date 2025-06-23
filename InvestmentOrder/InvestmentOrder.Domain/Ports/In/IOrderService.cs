@@ -1,5 +1,4 @@
 ﻿using InvestmentOrder.Domain.Dtos.Order;
-using InvestmentOrder.Domain.Entities;
 
 namespace InvestmentOrder.Domain.Ports.In;
 

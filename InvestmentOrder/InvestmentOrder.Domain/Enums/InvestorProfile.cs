@@ -1,7 +1,7 @@
 ﻿
 public enum InvestorProfile
 {
-    Conservador = 1,
-    Moderado = 2,
-    Agressivo = 3
+    Conservative = 1,
+    Moderate = 2,
+    Aggressive = 3
 }
